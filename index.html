@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alejandro López | Desarrollador Fullstack | Especialista en Apps Web y Móviles</title>
+    <meta name="description" content="Desarrollador Fullstack especializado en Python, React Native, FastAPI y Power Apps. Creo soluciones web y móviles completas con enfoque en resultados.">
+    <meta name="keywords" content="desarrollador fullstack, python, react native, fastapi, power apps, desarrollo web, desarrollo móvil, aplicaciones web, portfolio">
+    <meta name="author" content="Alejandro López">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2563eb">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alejandrolopez.com/">
+    <meta property="og:title" content="Alejandro López | Desarrollador Fullstack">
+    <meta property="og:description" content="Desarrollador Fullstack especializado en Python, React Native, FastAPI y Power Apps. Soluciones web y móviles completas.">
+    <meta property="og:image" content="https://alejandrolopez.com/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://alejandrolopez.com/">
+    <meta property="twitter:title" content="Alejandro López | Desarrollador Fullstack">
+    <meta property="twitter:description" content="Desarrollador Fullstack especializado en Python, React Native, FastAPI y Power Apps.">
+    <meta property="twitter:image" content="https://alejandrolopez.com/images/twitter-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://alejandrolopez.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Preload de fuentes críticas -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- Preconexión a dominios externos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alejandro López",
+      "jobTitle": "Desarrollador Fullstack",
+      "url": "https://alejandrolopez.com",
+      "sameAs": [
+        "https://github.com/alejandrolopez",
+        "https://linkedin.com/in/alejandrolopez",
+        "https://twitter.com/alejandrolopez"
+      ],
+      "knowsAbout": ["Python", "React Native", "FastAPI", "SQL", "Power Apps", "PHP", "JavaScript", "HTML", "CSS"],
+      "description": "Desarrollador Fullstack especializado en aplicaciones web y móviles."
+    }
+    </script>
+    
+    <style>
+    :root{
+      --primary:#1e3a8a;
+      --accent:#2563eb;
+      --dark:#0f172a;
+      --light:#f8fafc;
+      --green:#16a34a;
+      --purple:#8b5cf6;
+    }
+
+    /* ===== GENERAL ===== */
+    body {
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      color: var(--light);
+      scroll-behavior: smooth;
+      overflow-x:hidden;
+      position:relative;
+      background:#0f172a;
+      line-height: 1.6;
+    }
+
+    /* ===== BACKGROUND CANVAS ===== */
+    #bgCanvas {
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      z-index:-1;
+    }
+
+    /* Mejora de accesibilidad: enfoque para elementos interactivos */
+    a:focus, button:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* ===== HEADER ===== */
+    header{
+      text-align:center;
+      padding:6rem 2rem;
+      position:relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, transparent 10%, var(--dark) 90%);
+      z-index: -1;
+    }
+    header h1{
+      font-size:3.5rem;
+      font-weight:700;
+      margin-bottom:0.5rem;
+      text-shadow: 0 0 15px rgba(37, 99, 235, 0.7);
+      letter-spacing: 2px;
+    }
+    header p{
+      font-size:1.5rem;
+      opacity:0.9;
+      margin-bottom: 2rem;
+    }
+    .header-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+      opacity: 0.15;
+      filter: blur(40px);
+      z-index: -1;
+      animation: pulseGlow 4s infinite alternate;
+    }
+    @keyframes pulseGlow {
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 0.1; }
+      100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.2; }
+    }
+
+    /* ===== NAV ===== */
+    nav{
+      display:flex;
+      justify-content:center;
+      gap:2rem;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      color: var(--dark);
+      padding:1.2rem;
+      position:sticky;
+      top:0;
+      z-index:100;
+      box-shadow:0 4px 20px rgba(0,0,0,0.25);
+      border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+    }
+    nav a{
+      text-decoration:none;
+      color:var(--light);
+      font-weight:600;
+      transition:0.3s;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+      border-radius: 3px;
+    }
+    nav a:hover{color:var(--accent);}
+    nav a:hover::after { width: 100%; }
+
+    /* Hamburger menu (solo visible en móviles) */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 2rem;
+      height: 2rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 10;
+    }
+    .menu-toggle span {
+      width: 2rem;
+      height: 0.25rem;
+      background: var(--light);
+      border-radius: 10px;
+      transition: all 0.3s linear;
+      position: relative;
+      transform-origin: 1px;
+    }
+
+    /* ===== SECTIONS ===== */
+    section{
+      max-width:1200px;
+      margin:auto;
+      padding:5rem 2rem;
+      position:relative;
+    }
+
+    h2{
+      font-size:2.8rem;
+      text-align:center;
+      margin-bottom:3rem;
+      font-weight:700;
+      position:relative;
+      text-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+    }
+    h2::after{
+      content:''; display:block; width:100px; height:5px; background: var(--accent);
+      margin:1.5rem auto 0; border-radius:3px;
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .about p{text-align:center;font-size:1.2rem;max-width:800px;margin:auto;line-height:1.8;}
+
+    /* ===== SKILLS ===== */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+    .skill{
+      background: linear-gradient(145deg, rgba(37, 99, 235, 0.2), rgba(30, 58, 138, 0.2));
+      padding:0.8rem 1.5rem;
+      border-radius:12px;
+      font-weight:600;
+      transition:0.3s, transform 0.3s;
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .skill::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: 0.5s;
+    }
+    .skill:hover::before {
+      left: 100%;
+    }
+    .skill:hover{
+      background: linear-gradient(145deg, var(--accent), var(--primary));
+      transform:translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+    }
+
+    /* ===== PROJECTS ===== */
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+      gap:2.5rem;
+    }
+    .card{
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.7), rgba(30, 58, 138, 0.3));
+      border-radius:20px;
+      padding:2.2rem;
+      backdrop-filter:blur(10px);
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+      transition:all 0.4s ease;
+      transform:translateY(30px);
+      opacity:0;
+      cursor:pointer;
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--accent), var(--purple));
+    }
+    .card.visible{transform:translateY(0);opacity:1;}
+    .card:hover{
+      transform:translateY(-15px) scale(1.03);
+      box-shadow:0 20px 40px rgba(37, 99, 235, 0.3);
+    }
+    .card h3{
+      margin-bottom:1.2rem;
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+    .card p{
+      margin-bottom:1.8rem;
+      line-height: 1.6;
+    }
+    .badge{
+      display:inline-block;
+      background: linear-gradient(45deg, var(--green), #22c55e);
+      color:white;
+      font-size:0.85rem;
+      padding:0.4rem 0.8rem;
+      border-radius:20px;
+      margin-right:0.6rem;
+      margin-bottom: 0.6rem;
+      animation: pulse 2s infinite;
+      box-shadow: 0 4px 10px rgba(22, 163, 74, 0.3);
+    }
+    @keyframes pulse{
+      0%,100%{transform:scale(1); box-shadow: 0 4px 10px rgba(22, 163, 74, 0.3);}
+      50%{transform:scale(1.05); box-shadow: 0 6px 15px rgba(22, 163, 74, 0.5);}
+    }
+
+    .btn{
+      display:inline-block;
+      padding:0.9rem 1.8rem;
+      border-radius:50px;
+      background: linear-gradient(45deg, var(--accent), var(--purple));
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s, transform 0.3s;
+      box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, var(--purple), var(--accent));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+    .btn:hover{
+      transform:translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.6);
+    }
+    .btn:hover::before {
+      opacity: 1;
+    }
+
+    /* Vista Previa de Proyecto */
+    .project-preview {
+      margin-top: 4rem;
+      text-align: center;
+    }
+    
+    .preview-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      height: 500px;
+      margin: 2rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .preview-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #fff;
+    }
+    
+    .preview-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.7), rgba(37, 99, 235, 0.5));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .preview-container:hover .preview-overlay {
+      opacity: 1;
+    }
+    
+    .preview-overlay .btn {
+      margin: 0.5rem;
+    }
+    
+    .preview-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #1e3a8a, #2563eb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 1.2rem;
+    }
+    
+    /* Contact section */
+    .contact {
+      text-align: center;
+    }
+    .contact p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .contact strong {
+      color: var(--accent);
+      font-size: 1.4rem;
+    }
+
+    footer{
+      background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.7));
+      backdrop-filter: blur(10px);
+      text-align:center;
+      padding:3rem 1rem;
+      margin-top:5rem;
+      color:white;
+      border-top: 1px solid rgba(37, 99, 235, 0.3);
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, var(--accent), var(--purple));
+      color: white;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+    }
+    .social-links a:hover {
+      transform: translateY(-5px) rotate(5deg);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.5);
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 1024px) {
+      header {
+        padding: 5rem 2rem;
+      }
+      
+      header h1 {
+        font-size: 3rem;
+      }
+      
+      section {
+        padding: 4rem 2rem;
+      }
+      
+      h2 {
+        font-size: 2.3rem;
+      }
+      
+      .projects {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+      
+      .preview-container {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 4rem 1.5rem;
+      }
+      
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      header p {
+        font-size: 1.2rem;
+      }
+      
+      /* Navigation para móviles */
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2rem;
+        padding: 1rem;
+        position: relative;
+      }
+      
+      .menu-toggle {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        right: 1.5rem;
+        transform: translateY(-50%);
+      }
+      
+      nav.active {
+        height: auto;
+      }
+      
+      nav a {
+        display: none;
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem 0;
+      }
+      
+      nav.active a {
+        display: block;
+      }
+      
+      /* Animación del menú hamburguesa */
+      .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg);
+      }
+      
+      .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+      
+      section {
+        padding: 3.5rem 1.5rem;
+      }
+      
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+      }
+      
+      .about p {
+        font-size: 1.1rem;
+      }
+      
+      .projects {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .card {
+        padding: 1.8rem;
+      }
+      
+      /* Ajustar efecto en móviles para mejor rendimiento */
+      .card:hover {
+        transform: translateY(-8px) scale(1.02);
+      }
+      
+      .skills-container {
+        gap: 0.9rem;
+      }
+      
+      .skill {
+        padding: 0.7rem 1.2rem;
+      }
+      
+      .preview-container {
+        height: 300px;
+      }
+      
+      .preview-overlay {
+        opacity: 1;
+        background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(37, 99, 235, 0.8));
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 3.5rem 1rem;
+      }
+      
+      header h1 {
+        font-size: 2.2rem;
+      }
+      
+      header p {
+        font-size: 1.1rem;
+      }
+      
+      nav {
+        padding: 0.8rem;
+      }
+      
+      section {
+        padding: 3rem 1rem;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+      }
+      
+      .skills-container {
+        gap: 0.7rem;
+      }
+      
+      .skill {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+      }
+      
+      .card {
+        padding: 1.5rem;
+      }
+      
+      .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+      }
+      
+      /* Desactivar efectos 3D en móviles para mejor rendimiento */
+      .card {
+        transform: translateY(20px);
+      }
+      
+      .card.visible {
+        transform: translateY(0);
+      }
+      
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      
+      .social-links a {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+      }
+      
+      .preview-container {
+        height: 250px;
+      }
+    }
+
+    /* Ajustes para orientación landscape en móviles */
+    @media (max-height: 500px) and (orientation: landscape) {
+      header {
+        padding: 2.5rem 1rem;
+      }
+      
+      header h1 {
+        font-size: 2rem;
+        margin-bottom: 0.3rem;
+      }
+      
+      section {
+        padding: 2.5rem 1rem;
+      }
+      
+      h2 {
+        margin-bottom: 1.5rem;
+      }
+      
+      .preview-container {
+        height: 200px;
+      }
+    }
+
+    /* Mejoras para dispositivos táctiles */
+    @media (hover: none) {
+      .skill:hover {
+        transform: none;
+        background: linear-gradient(145deg, rgba(37, 99, 235, 0.3), rgba(30, 58, 138, 0.3));
+      }
+      
+      nav a:hover {
+        transform: none;
+      }
+      
+      .btn:hover {
+        transform: none;
+      }
+      
+      .card:hover {
+        transform: none;
+      }
+      
+      .social-links a:hover {
+        transform: none;
+      }
+      
+      .preview-overlay {
+        opacity: 1;
+        background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(37, 99, 235, 0.8));
+      }
+    }
+
+    /* Efectos de aparición mejorados */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-on-scroll {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    /* Mejoras de rendimiento */
+    .skill, .card, .btn {
+      will-change: transform;
+    }
+
+    /* Mejora de contraste para accesibilidad */
+    @media (prefers-contrast: high) {
+      :root {
+        --primary: #0f172a;
+        --accent: #1e40af;
+      }
+      
+      .skill, .card {
+        border: 2px solid var(--accent);
+      }
+    }
+
+    /* Modo oscuro forzado (ya que el diseño es oscuro) */
+    @media (prefers-color-scheme: dark) {
+      /* Aseguramos que los colores se mantengan en modo oscuro */
+    }
+    </style>
+    
+    <!-- Structured data for breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://alejandrolopez.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Portfolio",
+        "item": "https://alejandrolopez.com/portfolio"
+      }]
+    }
+    </script>
+</head>
+<body itemscope itemtype="https://schema.org/Person">
+
+<canvas id="bgCanvas"></canvas>
+
+<header id="header">
+  <div class="header-glow"></div>
+  <h1 itemprop="name">Alejandro López</h1>
+  <p itemprop="jobTitle">Fullstack Developer | Apps Web & Móviles</p>
+</header>
+
+<nav id="navbar">
+  <button class="menu-toggle" aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <a href="#about">Sobre mí</a>
+  <a href="#skills">Stack</a>
+  <a href="#projects">Proyectos</a>
+  <a href="#contact">Contacto</a>
+</nav>
+
+<section id="about">
+  <h2>Sobre mí</h2>
+  <p>Soy un <strong>desarrollador Fullstack</strong> que domina todo el stack: Frontend, Backend, Bases de Datos, APIs y despliegue. Mi objetivo: crear soluciones reales que funcionen.</p>
+</section>
+
+<section id="skills">
+  <h2>Stack Tecnológico</h2>
+  <div class="skills-container">
+    <div class="skill">Python</div>
+    <div class="skill">React Native</div>
+    <div class="skill">FastAPI</div>
+    <div class="skill">SQL/MySQL</div>
+    <div class="skill">Power Apps</div>
+    <div class="skill">PHP</div>
+    <div class="skill">HTML/CSS/JS</div>
+    <div class="skill">Node.js</div>
+    <div class="skill">AWS</div>
+    <div class="skill">Docker</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Proyectos</h2>
+  <div class="projects">
+    <div class="card">
+      <h3>CRM Power Apps</h3>
+      <p>Gestión de leads y ventas con notificaciones y reportes automatizados en tiempo real.</p>
+      <div>
+        <span class="badge">Base de datos</span>
+        <span class="badge">PowerApps</span>
+        <span class="badge">Azure</span>
+      </div>
+      <a href="#" class="btn">Ver más</a>
+    </div>
+    <div class="card">
+      <h3>App de Detección de Caídas</h3>
+      <p>App móvil con sensores + IA para detectar accidentes en tiempo real y notificar emergencias.</p>
+      <div>
+        <span class="badge">React Native</span>
+        <span class="badge">Machine Learning</span>
+        <span class="badge">APIs</span>
+      </div>
+      <a href="#" class="btn">Ver más</a>
+    </div>
+    <div class="card">
+      <h3>Dashboard de Resultados</h3>
+      <p>Plataforma web con autenticación y reportes dinámicos desde base de datos SQL.</p>
+      <div>
+        <span class="badge">PHP</span>
+        <span class="badge">MySQL</span>
+        <span class="badge">JavaScript</span>
+      </div>
+      <a href="#" class="btn">Ver más</a>
+    </div>
+    <div class="card">
+      <h3>Clínica Dental Website</h3>
+      <p>Sitio web moderno y responsive para una clínica dental con sistema de citas online.</p>
+      <div>
+        <span class="badge">HTML/CSS</span>
+        <span class="badge">JavaScript</span>
+        <span class="badge">Responsive</span>
+      </div>
+      <a href="#dental-preview" class="btn">Ver vista previa</a>
+    </div>
+    <div class="card">
+      <h3>Calculadora Táctil (CalcTac)</h3>
+      <p>Calculadora web moderna con interfaz táctil, funciones avanzadas y diseño responsive.</p>
+      <div>
+        <span class="badge">HTML/CSS</span>
+        <span class="badge">JavaScript</span>
+        <span class="badge">UI/UX</span>
+      </div>
+      <a href="#calctac-preview" class="btn">Ver vista previa</a>
+    </div>
+  </div>
+  
+  <!-- Vista Previa del Proyecto de Clínica Dental -->
+  <div class="project-preview" id="dental-preview">
+    <h2>Vista Previa: Clínica Dental</h2>
+    <p>Explora el sitio web responsive que desarrollé para una clínica dental profesional</p>
+    
+    <div class="preview-container">
+      <div class="preview-placeholder">
+        <p>Cargando vista previa de la Clínica Dental...</p>
+      </div>
+      <div class="preview-overlay">
+        <a href="https://al3x2023.github.io/ClinicaDental/" target="_blank" class="btn">Abrir en nueva pestaña</a>
+        <a href="#projects" class="btn">Volver a proyectos</a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Vista Previa del Proyecto de Calculadora Táctil (CalcTac) -->
+  <div class="project-preview" id="calctac-preview">
+    <h2>Vista Previa: Calculadora Táctil (CalcTac)</h2>
+    <p>Prueba esta calculadora web moderna con interfaz táctil y diseño responsive</p>
+    
+    <div class="preview-container">
+      <div class="preview-placeholder">
+        <p>Cargando vista previa de la Calculadora Táctil...</p>
+      </div>
+      <div class="preview-overlay">
+        <a href="https://al3x2023.github.io/CalcTac/" target="_blank" class="btn">Abrir en nueva pestaña</a>
+        <a href="#projects" class="btn">Volver a proyectos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contacto</h2>
+  <p>Puedes escribirme a:</p>
+  <p><strong>alejandro@mail.com</strong></p>
+  <a href="mailto:alejandro@mail.com" class="btn">Enviar email</a>
+  
+  <div class="social-links">
+    <a href="https://github.com/alejandrolopez" aria-label="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+    <a href="https://linkedin.com/in/alejandrolopez" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+    <a href="https://twitter.com/alejandrolopez" aria-label="Twitter" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+    <a href="https://instagram.com/alejandrolopez" aria-label="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Alejandro López | Portafolio Fullstack</p>
+</footer>
+
+<script>
+// ===== MENÚ MÓVIL =====
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
+
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active');
+  nav.classList.toggle('active');
+});
+
+// Cerrar menú al hacer clic en un enlace
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    menuToggle.classList.remove('active');
+    nav.classList.remove('active');
+  });
+});
+
+// ===== CARD APPEAR ON SCROLL =====
+const cards = document.querySelectorAll('.card');
+const skills = document.querySelectorAll('.skill');
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      entry.target.classList.add('animate-on-scroll');
+    }
+  });
+},{threshold:0.2});
+
+cards.forEach(card=>observer.observe(card));
+skills.forEach(skill=>observer.observe(skill));
+
+// ===== FUTURISTIC PARTICLE BACKGROUND =====
+const canvas = document.getElementById('bgCanvas');
+const ctx = canvas.getContext('2d');
+let width = canvas.width = window.innerWidth;
+let height = canvas.height = window.innerHeight;
+
+const mouse = {x:null, y:null, radius:150};
+window.addEventListener('mousemove', e => { mouse.x = e.x; mouse.y = e.y; });
+window.addEventListener('resize', () => { 
+  width = canvas.width = window.innerWidth; 
+  height = canvas.height = window.innerHeight; 
+});
+
+// Optimizar el fondo para móviles (menos partículas)
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
+const particleCount = isMobile ? 50 : 100;
+
+class Particle {
+  constructor() {
+    this.x = Math.random()*width;
+    this.y = Math.random()*height;
+    this.vx = (Math.random()-0.5)*0.9;
+    this.vy = (Math.random()-0.5)*0.9;
+    this.size = Math.random()*3+1;
+    this.color = `hsl(${Math.random()*60 + 190}, 100%, 70%)`;
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+    ctx.fillStyle = this.color;
+    ctx.fill();
+  }
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    if(this.x<0||this.x>width) this.vx*=-1;
+    if(this.y<0||this.y>height) this.vy*=-1;
+
+    let dx = mouse.x - this.x;
+    let dy = mouse.y - this.y;
+    let dist = Math.sqrt(dx*dx+dy*dy);
+    if(dist<mouse.radius){
+      let angle = Math.atan2(dy,dx);
+      let force = (mouse.radius-dist)/mouse.radius;
+      this.vx -= Math.cos(angle)*force*0.7;
+      this.vy -= Math.sin(angle)*force*0.7;
+    }
+  }
+}
+
+const particles = [];
+for(let i=0;i<particleCount;i++) particles.push(new Particle());
+
+function connectParticles(){
+  for(let a=0;a<particles.length;a++){
+    for(let b=a;b<particles.length;b++){
+      let dx = particles[a].x - particles[b].x;
+      let dy = particles[a].y - particles[b].y;
+      let dist = Math.sqrt(dx*dx + dy*dy);
+      if(dist < 150){
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(100, 200, 255,${1 - dist/150})`;
+        ctx.lineWidth = 0.8;
+        ctx.moveTo(particles[a].x,particles[a].y);
+        ctx.lineTo(particles[b].x,particles[b].y);
+        ctx.stroke();
+      }
+    }
+  }
+}
+
+let gradAngle = 0;
+function animate(){
+  gradAngle += 0.002;
+  const gradient = ctx.createLinearGradient(0,0,width,height);
+  gradient.addColorStop(0, `hsl(${gradAngle*360},80%,8%)`);
+  gradient.addColorStop(1, `hsl(${(gradAngle*360+180)%360},80%,15%)`);
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0,0,width,height);
+
+  particles.forEach(p=>{p.update(); p.draw();});
+  connectParticles();
+  requestAnimationFrame(animate);
+}
+animate();
+
+// Efecto de escritura en el título
+const title = document.querySelector('header h1');
+const originalText = title.textContent;
+title.textContent = '';
+
+let i = 0;
+function typeWriter() {
+  if (i < originalText.length) {
+    title.textContent += originalText.charAt(i);
+    i++;
+    setTimeout(typeWriter, 100);
+  }
+}
+
+setTimeout(typeWriter, 500);
+
+// Cargar vista previa de la Clínica Dental
+document.addEventListener('DOMContentLoaded', function() {
+  const dentalPreviewContainer = document.querySelector('#dental-preview .preview-container');
+  const dentalPlaceholder = document.querySelector('#dental-preview .preview-placeholder');
+  
+  // Crear iframe para la vista previa de la Clínica Dental
+  setTimeout(function() {
+    dentalPlaceholder.style.display = 'none';
+    
+    const iframe = document.createElement('iframe');
+    iframe.classList.add('preview-frame');
+    iframe.src = 'https://al3x2023.github.io/ClinicaDental/';
+    iframe.title = 'Vista previa - Sitio web de Clínica Dental';
+    iframe.loading = 'lazy';
+    
+    dentalPreviewContainer.appendChild(iframe);
+  }, 1500);
+  
+  // Cargar vista previa de la Calculadora Táctil (CalcTac)
+  const calctacPreviewContainer = document.querySelector('#calctac-preview .preview-container');
+  const calctacPlaceholder = document.querySelector('#calctac-preview .preview-placeholder');
+  
+  // Crear iframe para la vista previa de la Calculadora Táctil
+  setTimeout(function() {
+    calctacPlaceholder.style.display = 'none';
+    
+    const iframe = document.createElement('iframe');
+    iframe.classList.add('preview-frame');
+    iframe.src = 'https://al3x2023.github.io/CalcTac/';
+    iframe.title = 'Vista previa - Calculadora Táctil (CalcTac)';
+    iframe.loading = 'lazy';
+    
+    calctacPreviewContainer.appendChild(iframe);
+  }, 2000); // Un pequeño retraso para no cargar todo a la vez
+});
+
+// Mejora de rendimiento: carga diferida de fuentes
+window.addEventListener('load', function() {
+  if ('fonts' in document) {
+    document.fonts.load('1em Poppins').then(function() {
+      document.documentElement.classList.add('fonts-loaded');
+    });
+  }
+});
+</script>
+
+<!-- Google Analytics (ejemplo) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+
+</body>
+</html>
